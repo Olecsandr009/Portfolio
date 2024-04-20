@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>`
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="header">
+        <a class="header__logo" href="">
+            <img src="image/logo.png" alt="logo" />
+        </a>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link" href="">Home</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="">about</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="">contact us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="home">
+            <div class="home__content">
+                <h1 class="home__title title">Title</h1>
+                <p class="home__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Illum rem magni dolore qui harum tempora, quo sequi repellat enim debitis 
+                    aperiam ab excepturi quisquam itaque nisi, ad totam praesentium earum!</p>
+                <div class="home__buttons">
+                    <button class="home__btn button">contact us</button>
+                    <button class="home__btn button-border">Resume</button> 
+                </div>
+            </div>
+            <div class="home__media"></div>
+        </section>
+        <section class="about">
+            <div class="about__media"></div>
+            <div class="about__content">
+                <h2 class="about__title title">about</h2>
+                <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, 
+                    animi incidunt consectetur consequatur necessitatibus fuga reiciendis dolorum magnam 
+                    laborum earum quod cupiditate recusandae nemo, aliquam, deserunt odit omnis sit porro?</p>
+            </div>
+        </section>
+        <section class="contact">
+            <h2 class="contact__title title">Contact</h2>
+            <form class="contact__form">
+                <div class="contact__row">
+                    <label class="contact__label" for="name">Name</label>
+                    <input class="contact__input input" name="name" id="name" type="text" placeholder="Name"/>
+                </div>
+                <div class="contact__row">
+                    <label class="contact__label" for="email">email</label>
+                    <input class="contact__input input" name="email" id="email" type="email" placeholder="Email"/>
+                </div>
+                <div class="contact__row">
+                    <label class="contact__label" for="text">Text</label>
+                    <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="10" placeholder="text"></textarea>
+                </div> 
+                <button class="contact__submit button">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
