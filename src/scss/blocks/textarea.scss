@@ -1,0 +1,10 @@
+.textarea {
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 10px;
+    color: var(--color-text);
+    resize: none;
+}

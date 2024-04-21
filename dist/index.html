@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240421193547' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.min.css?_v=20240421193547">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240421225856' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.min.css?_v=20240421225856">
     <title>Мій сайт</title>
 </head>
 
@@ -18,13 +18,19 @@
     <nav class="header__nav">
         <ul class="header__list" data-links-list>
             <li class="header__item">
-                <a class="header__link active" data-link="1" href="">Home</a>
+                <a class="header__link active" data-link="1" href="">
+                    <i class='bx bxs-home'></i>
+                </a>
             </li>
             <li class="header__item">
-                <a class="header__link" data-link="2" href="">about</a>
+                <a class="header__link" data-link="2" href="">
+                    <i class='bx bx-book' ></i>
+                </a>
             </li>
             <li class="header__item">
-                <a class="header__link" data-link="3" href="">contact us</a>
+                <a class="header__link" data-link="3" href="">
+                    <i class='bx bxs-contact' ></i>
+                </a>
             </li>
         </ul>
     </nav>
@@ -33,7 +39,7 @@
 		<main class="main" data-blocks-list>
 			<section class="home block active" data-block="1">
                 <div class="home__content">
-                    <h1 class="home__title title">Title</h1>
+                    <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
                     <p class="home__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                         Illum rem magni dolore qui harum tempora, quo sequi repellat enim debitis 
                         aperiam ab excepturi quisquam itaque nisi, ad totam praesentium earum!</p>
@@ -43,15 +49,15 @@
                     </div>
                 </div>
                 <div class="home__media">
-                    <img src="" alt="image" />
+                    <img src="./img/image.png" alt="image" />
                 </div>
             </section>
             <section class="about block" data-block="2">
                 <div class="about__media">
-                    <img src="" alt="image" />
+                    <img src="./img/image.png" alt="image" />
                 </div>
                 <div class="about__content">
-                    <h2 class="about__title title">about</h2>
+                    <h2 class="about__title title">Про мене</h2>
                     <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, 
                         animi incidunt consectetur consequatur necessitatibus fuga reiciendis dolorum magnam 
                         laborum earum quod cupiditate recusandae nemo, aliquam, deserunt odit omnis sit porro?</p>
@@ -71,7 +77,7 @@
                         </div>
                         <div class="contact__row">
                             <label class="contact__label" for="text">Text</label>
-                            <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="10" placeholder="text"></textarea>
+                            <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="5" placeholder="text"></textarea>
                         </div> 
                         <button class="contact__submit button">Submit</button>
                     </form>
@@ -168,7 +174,7 @@
 </footer>
 	</div>
 
-	<script src="js/app.min.js?_v=20240421193547"></script>
+	<script src="js/app.min.js?_v=20240421225856"></script>
 </body>
 
 </html>

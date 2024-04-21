@@ -123,9 +123,10 @@ if(linksList) {
     linksList.addEventListener("click", e => {
         if(e.target.closest("[data-link]")) {
             e.preventDefault()
+            const currentLink = e.target.closest("[data-link]")
 
-            openLink(linksList, e.target.dataset.link)
-            openBlock(blocksList, e.target.dataset.link)
+            openLink(linksList, currentLink.dataset.link)
+            openBlock(blocksList, currentLink.dataset.link)
         }
     })
 }

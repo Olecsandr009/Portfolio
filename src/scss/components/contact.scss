@@ -11,3 +11,24 @@
 .contact.active .contact__content {
     transform: translateY(0);
 }
+.contact__title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.contact__row {
+    display: flex;
+    flex-direction: column;
+}
+.contact__label {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.contact__submit {
+    margin-top: 20px;
+}
