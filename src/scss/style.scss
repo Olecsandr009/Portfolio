@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;700;900&display=swap');
 @import 'font';
 @import 'reset';
 @import 'base';
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-	// font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	height: 100vh;
@@ -24,9 +25,17 @@ body {
 
 :root {
     --color-background: #0e0a01;
-    --color-primary: #ca8a1a;
-    --color-secondary: #1e2004;
+    --color-primary: #dd8f08;
+    --color-primary-light: #ca891a4d;
+    --color-secondary: #17180a;
+    --color-secondary-inactive: #2b2825;
     --color-text: #ffffff;
+    --color-text-inactive: #ffffffa1;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
 }
 
 .wrapper {
@@ -67,3 +76,4 @@ body {
 @import './components/contact.scss';
 @import './components/header.scss';
 @import './components/home.scss';
+@import './components/aside.scss';

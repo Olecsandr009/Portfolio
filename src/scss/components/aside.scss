@@ -1,0 +1,119 @@
+.aside {
+    background-color: var(--color-secondary);
+    width: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 20px;
+}
+.aside__ava {}
+.aside__image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+}
+.aside__image img {
+    position: relative;
+    max-height: 100%;
+    height: 100%;
+    width: auto;
+}
+.aside__title {
+    font-weight: 900;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+.aside__flag {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+.aside__flag-text {
+    color: var(--color-primary);
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--color-primary-light);
+    font-size: 14px;
+}
+.aside__contacts {
+    margin-bottom: 20px;
+}
+.aside__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.aside__item {}
+.aside__link {
+    font-size: 24px;
+    color: var(--color-text-inactive);
+    transition: var(tran);
+}
+.aside__link:hover {
+    color: var(--color-text);
+}
+.aside__info {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-secondary-inactive);
+    margin-bottom: 24px;
+}
+.aside__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.aside__info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.aside__info-title {
+    font-weight: 500;
+}
+.aside__info-value {
+    color: var(--color-text-inactive);
+}
+.aside__skills {}
+.aside__skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.aside__skill-item {}
+.aside__skill-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 8px;
+}
+.aside__skill-title {
+    font-weight: 500;
+    font-size: 14px;
+}
+.aside__skill-value {
+    color: var(--color-text-inactive);
+    font-size: 14px;
+}
+.aside__skill-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-secondary-inactive);
+    position: relative;
+}
+.aside__skill-percent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 72%;
+    height: 100%;
+    background-color: var(--color-primary);
+}
