@@ -1,0 +1,31 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    overflow: hidden;
+}
+.home.active .home__content {
+    transform: translateX(0);
+}
+.home.active .home__media {
+    transform: translateX(0);
+}
+.home__content {
+    width: 50%;
+    transform: translateX(-100%);
+    transition: transform .3s;
+}
+.home__media {
+    transform: translateX(100%);
+    transition: transform .3s;
+    background-color: gray;
+    width: 50%;
+    height: 100%;
+}
+.home__media img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+}

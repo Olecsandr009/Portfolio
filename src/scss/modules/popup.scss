@@ -1,0 +1,275 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .6s;
+	z-index: 100;
+
+	&.open-popup {
+		pointer-events: all;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__shadow {
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		background: #1E212C;
+		opacity: 0.75;
+	}
+	&__body {
+		background: #FFFFFF;
+		border: 1px solid #E5E8ED;
+		box-shadow: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1), 0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+		border-radius: 4px;
+		@include adaptiveValue( width, 486, 300, 1 );
+		@include adaptiveValue( min-height, 653, 353, 1 );
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate( -50%, -50% );
+	}
+	&__body-container {
+		max-width: 410px;
+		width: 100%;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
+	&__exit {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+	}
+	&__title {
+		@include adaptiveValue( font-size, 28, 18, 1 );
+		line-height: prc( 42, 28 );
+		text-align: center;
+		color: #1E212C;
+		@include adaptiveValue( padding-top, 48, 28, 1 );
+
+		&:not( :last-child ) {
+			@include adaptiveValue( margin-bottom, 24, 10, 1 );
+		}
+	}
+	&__sub-title {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		text-align: center;
+		color: #787A80;
+		@include adaptiveValue( margin-bottom, 24, 10, 1 );
+	}
+	&__form-sign-in {
+	}
+	&__button.button {
+		display: block;
+	}
+	&__popup-link {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: #424551;
+		@include adaptiveValue( padding-top, 20, 10, 1 );
+		@include adaptiveValue( padding-bottom, 20, 10, 1 );
+	}
+	&__popup-link-link {
+		color: $color-primary;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__text-soc {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		text-align: center;
+		color: #787A80;
+		@include adaptiveValue( padding-top, 12, 5, 1 );
+		@include adaptiveValue( padding-bottom, 20, 10, 1 );
+	}
+	&__socs-link {
+		&:not( :last-child ) {
+			@include adaptiveValue( margin-right, 15, 8, 1 );
+		}
+	}
+	&__socs {
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue( margin-bottom, 50, 25, 1 );
+	}
+	&__facebook {
+		& path {
+			transition: all 0.4s;
+		}
+		&:hover path {
+			fill: $color-primary;
+		}
+	}
+	&__facebook-svg {
+	}
+	&__google {
+		& path {
+			transition: all 0.4s;
+		}
+		&:hover path {
+			fill: $color-primary;
+		}
+	}
+	&__google-svg {
+	}
+	&__twitter {
+		& path {
+			transition: all 0.4s;
+		}
+		&:hover path {
+			fill: $color-primary;
+		}
+	}
+	&__twitter-svg {
+	}
+	&__linked-in {
+		& path {
+			transition: all 0.4s;
+		}
+		&:hover path {
+			fill: $color-primary;
+		}
+	}
+	&__linked-in-svg {
+	}
+}
+.popup-image {
+}
+.form-sign-in {
+	&__email {
+	}
+	&__password {
+	}
+	&__checkbox {
+	}
+}
+.full-name {
+	&__text {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: #424551;
+		display: inline-block;
+		@include adaptiveValue( margin-bottom, 8, 4, 1 );
+	}
+	&__input {
+		width: 100%;
+		@include adaptiveValue( height, 44, 22, 1 );
+		border: 1px solid #D7DADD;
+		border-radius: 4px;
+		@include adaptiveValue( padding-left, 16, 8, 1 );
+		@include adaptiveValue( padding-right, 16, 8, 1 );
+
+		&:placeholder {
+			font-weight: 400;
+			@include adaptiveValue( font-size, 14, 10, 1 );
+			line-height: prc( 21, 14 );
+			color: #9A9CA5;
+		}
+	}
+}
+.email-form {
+	&__text {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: #424551;
+		display: inline-block;
+		@include adaptiveValue( margin-bottom, 8, 4, 1 );
+		@include adaptiveValue( padding-top, 20, 10, 1 );
+	}
+	&__input {
+		width: 100%;
+		@include adaptiveValue( height, 44, 32, 1 );
+		border: 1px solid #D7DADD;
+		border-radius: 4px;
+		@include adaptiveValue( padding-left, 16, 8, 1 );
+		@include adaptiveValue( padding-right, 16, 8, 1 );
+
+		&:placeholder {
+			font-weight: 400;
+			@include adaptiveValue( font-size, 14, 10, 1 );
+			line-height: prc( 21, 14 );
+			color: #9A9CA5;
+		}
+	}
+}
+.form-password {
+	position: relative;
+
+	&__text {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: #424551;
+		display: inline-block;
+		@include adaptiveValue( padding-top, 20, 10, 1 );
+		@include adaptiveValue( margin-bottom, 8, 4, 1 );
+	}
+	&__input {
+		width: 100%;
+		@include adaptiveValue( height, 44, 32, 1 );
+		border: 1px solid #D7DADD;
+		border-radius: 4px;
+		@include adaptiveValue( padding-right, 46, 23, 1 );
+		@include adaptiveValue( padding-left, 16, 8, 1 );
+
+		&:placeholder {
+			font-weight: 400;
+			@include adaptiveValue( font-size, 14, 10, 1 );
+			line-height: prc( 21, 14 );
+			color: #9A9CA5;
+		}
+	}
+	&__icon {
+		position: absolute;
+		@include adaptiveValue( top, 64, 28, 1 );
+		@include adaptiveValue( right, 15, 5, 1 );
+	}
+	&__img {
+	}
+}
+.checkbox-form {
+	display: flex;
+	align-items: center;
+
+	&__checkbox-and-link {
+		display: flex;
+		justify-content: space-between;
+		@include adaptiveValue( padding-top, 20, 10, 1 );
+		@include adaptiveValue( padding-bottom, 24, 12, 1 );
+	}
+	&__input {
+	}
+	&__text {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: #424551;
+		@include adaptiveValue( padding-left, 12, 6, 1 );
+	}
+	&__link {
+		font-weight: 400;
+		@include adaptiveValue( font-size, 14, 10, 1 );
+		line-height: prc( 21, 14 );
+		color: $color-primary;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.activeSvg path {
+	fill: #424551;
+}

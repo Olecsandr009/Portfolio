@@ -1,0 +1,13 @@
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact__content {
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+.contact.active .contact__content {
+    transform: translateY(0);
+}
