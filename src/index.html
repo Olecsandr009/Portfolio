@@ -8,6 +8,11 @@
 	<div class="wrapper wrapper__container">
 		@@include( 'html/header.html', {} )
 		<main class="main" data-blocks-list>
+            <div class="main__burger-menu">
+                <button class="main__burger-btn" data-popup-link="1">
+                    <i class='bx bx-menu-alt-left' ></i>
+                </button>
+            </div>
 			<section class="home block active" data-block="1">
                 <div class="home__content">
                     <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
@@ -56,7 +61,7 @@
             </section>
 		</main>
 		@@include( 'html/aside.html', {} )
-		@@include( 'html/footer.html', {} )
+        <div class="shadow" data-popup-shadow="1"></div>
 	</div>
 
 	<script src="js/app.min.js"></script>

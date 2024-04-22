@@ -37,10 +37,11 @@ flsFunctions.isWebp();
 
 // lookPassword.lookPassword();
 
-// Функція для модального вікна
-// import * as popup from "./modules/popup.js";
+/*--=============================== Popup ===================================--*/
+/*--==================== Функція з логікою для попапів ======================--*/
 
-// popup.popup();
+// Функція для модального вікна
+import "./modules/popup.js";
 
 // Функція для лічильника кількості покупки
 // import * as quantity from "./modules/quantity.js";
@@ -212,4 +213,16 @@ function getCurrentLinkIndex(list) {
     }
 
     return currentLinkIndex
+}
+
+const theme = document.querySelector("[data-theme]")
+const body = document.body
+
+if(theme) {
+    theme.addEventListener("click", e => {
+        e.preventDefault()
+
+        e.currentTarget.classList.toggle("active")
+        body.classList.toggle("dark")
+    })
 }

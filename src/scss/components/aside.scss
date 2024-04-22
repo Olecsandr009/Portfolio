@@ -1,9 +1,46 @@
 .aside {
+    flex: 0 0 300px;
     background-color: var(--color-secondary);
-    width: 500px;
     overflow: hidden;
     border-radius: 8px;
     padding: 20px;
+
+    @media screen and (max-width: ($maxWidthContainer + px)) {
+        flex: 0 0 270px;
+    }
+
+    @media screen and (max-width: $notebook) {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        height: calc(100% - 40px);
+        width: 300px;
+        z-index: 100;
+        transform: translateX(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .1s, transform .2s;
+    }
+}
+.aside.open-popup {
+    @media screen and (max-width: $notebook) {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+.aside__close {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--color-close);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 .aside__ava {}
 .aside__image {
@@ -73,13 +110,45 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: px;
 }
 .aside__info-title {
     font-weight: 500;
 }
+.aside__info-wrapper {
+    position: relative;
+}
+.aside__info-wrapper .aside__info-value {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    cursor: default;
+
+    @media screen and (max-width: ($maxWidthContainer + px)) {
+        max-width: 160px;
+    }
+}
 .aside__info-value {
     color: var(--color-text-inactive);
+    white-space: nowrap;
+}
+.aside__info-wrapper:hover .aside__info-value-hover {
+    opacity: 1;
+    pointer-events: all;
+}
+.aside__info-value-hover {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: inline-block;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 4px 6px;
+    background-color: var(--color-secondary);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
 }
 .aside__skills {}
 .aside__skill-list {

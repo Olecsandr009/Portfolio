@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240421225856' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.min.css?_v=20240421225856">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240422100514' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.min.css?_v=20240422100514">
     <title>Мій сайт</title>
 </head>
 
@@ -34,9 +34,55 @@
             </li>
         </ul>
     </nav>
-    <div></div>
+    <div class="header__theme">
+        <button class="header__theme-btn" data-theme>
+            <span class="header__theme-item">
+                <i class='bx bx-sun light' ></i>
+                <i class='bx bx-moon dark' ></i>
+            </span>
+        </button>
+    </div>
+</header>
+<header class="header-lite">
+    <div class="header-lite__menu">
+        <button class="header-lite__menu-btn">
+            <i class='bx bx-menu-alt-left' ></i>
+        </button>
+    </div>
+    <div class="header-lite__nav">
+        <ul class="header-lite__list">
+            <li class="header-lite__item">
+                <a class="header-lite__link active" data-link="1" href="">
+                    <i class='bx bxs-home'></i>
+                </a>
+            </li>
+            <li class="header-lite__item">
+                <a class="header-lite__link" data-link="2" href="">
+                    <i class='bx bx-book' ></i>
+                </a>
+            </li>
+            <li class="header-lite__item">
+                <a class="header-lite__link" data-link="3" href="">
+                    <i class='bx bxs-contact' ></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="header-lite__theme">
+        <button class="header-lite__theme-btn" data-theme>
+            <span class="header-lite__theme-item">
+                <i class='bx bx-sun light' ></i>
+                <i class='bx bx-moon dark' ></i>
+            </span>
+        </button>
+    </div>
 </header>
 		<main class="main" data-blocks-list>
+            <div class="main__burger-menu">
+                <button class="main__burger-btn" data-popup-link="1">
+                    <i class='bx bx-menu-alt-left' ></i>
+                </button>
+            </div>
 			<section class="home block active" data-block="1">
                 <div class="home__content">
                     <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
@@ -84,7 +130,8 @@
                 </div>
             </section>
 		</main>
-		<aside class="aside">
+		<aside class="aside" data-popup="1">
+    <button class="aside__close" data-popup-exit="1"><i class='bx bx-x'></i></button>
     <div class="aside__ava">
         <span class="aside__image">
             <img src="../img/image.png" alt="Ava" />
@@ -117,7 +164,10 @@
         <ul class="aside__info-list">
             <li class="aside__info-item">
                 <h4 class="aside__info-title">Email</h4>
-                <span class="aside__info-value">kirkovsasha009@gmail.com</span>
+                <div class="aside__info-wrapper">
+                    <span class="aside__info-value">kirkovsasha009@gmail.com</span>
+                    <span class="aside__info-value-hover">kirkovsasha009@gmail.com</span>
+                </div>
             </li>
             <li class="aside__info-item">
                 <h4 class="aside__info-title">Phone</h4>
@@ -169,12 +219,10 @@
         </ul>
     </div>
 </aside>
-		<footer class="footer">
-	
-</footer>
+        <div class="shadow" data-popup-shadow="1"></div>
 	</div>
 
-	<script src="js/app.min.js?_v=20240421225856"></script>
+	<script src="js/app.min.js?_v=20240422100514"></script>
 </body>
 
 </html>

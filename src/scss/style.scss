@@ -21,9 +21,32 @@ body {
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: center; */
+
+    transition: var(--tran-04);
+}
+
+p {
+    transition: color .5s;
 }
 
 :root {
+    --color-background: #b4b4b4;
+    --color-primary: #dd8f08;
+    --color-primary-light: #ca891a4d;
+    --color-secondary: #eae8e3;
+    --color-secondary-inactive: #cec5bb;
+    --color-text: #050404;
+    --color-text-inactive: #1f1e1ea1;
+    --color-shadow: #63514781;
+    --color-close: #ea0e0e;
+    
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+body.dark {
     --color-background: #0e0a01;
     --color-primary: #dd8f08;
     --color-primary-light: #ca891a4d;
@@ -31,11 +54,7 @@ body {
     --color-secondary-inactive: #2b2825;
     --color-text: #ffffff;
     --color-text-inactive: #ffffffa1;
-
-    --tran-02: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.4s ease;
-    --tran-05: all 0.5s ease;
+    --color-shadow: #63514781;
 }
 
 .wrapper {
@@ -57,7 +76,12 @@ body {
     height: 90%;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
     gap: 30px;
+
+    @media screen and (max-width: $table) {
+        gap: 16px;
+    }
 }
 
 .main {
@@ -67,6 +91,47 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-shadow);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.shadow.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.main__burger-menu {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+
+    @media screen and (max-width: $notebook) {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+.main__burger-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--color-text);
 }
 
 // Blocks
