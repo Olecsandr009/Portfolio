@@ -4,6 +4,7 @@
     overflow: hidden;
     border-radius: 8px;
     padding: 20px;
+    transition: var(--tran-04);
 
     @media screen and (max-width: ($maxWidthContainer + px)) {
         flex: 0 0 270px;

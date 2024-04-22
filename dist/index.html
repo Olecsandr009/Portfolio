@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240422100514' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.min.css?_v=20240422100514">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css?_v=20240422114443' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.min.css?_v=20240422114443">
     <title>Мій сайт</title>
 </head>
 
@@ -43,93 +43,96 @@
         </button>
     </div>
 </header>
-<header class="header-lite">
-    <div class="header-lite__menu">
-        <button class="header-lite__menu-btn">
-            <i class='bx bx-menu-alt-left' ></i>
-        </button>
-    </div>
-    <div class="header-lite__nav">
-        <ul class="header-lite__list">
-            <li class="header-lite__item">
-                <a class="header-lite__link active" data-link="1" href="">
-                    <i class='bx bxs-home'></i>
-                </a>
-            </li>
-            <li class="header-lite__item">
-                <a class="header-lite__link" data-link="2" href="">
-                    <i class='bx bx-book' ></i>
-                </a>
-            </li>
-            <li class="header-lite__item">
-                <a class="header-lite__link" data-link="3" href="">
-                    <i class='bx bxs-contact' ></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="header-lite__theme">
-        <button class="header-lite__theme-btn" data-theme>
-            <span class="header-lite__theme-item">
-                <i class='bx bx-sun light' ></i>
-                <i class='bx bx-moon dark' ></i>
-            </span>
-        </button>
-    </div>
-</header>
-		<main class="main" data-blocks-list>
-            <div class="main__burger-menu">
-                <button class="main__burger-btn" data-popup-link="1">
-                    <i class='bx bx-menu-alt-left' ></i>
-                </button>
-            </div>
-			<section class="home block active" data-block="1">
-                <div class="home__content">
-                    <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
-                    <p class="home__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Illum rem magni dolore qui harum tempora, quo sequi repellat enim debitis 
-                        aperiam ab excepturi quisquam itaque nisi, ad totam praesentium earum!</p>
-                    <div class="home__buttons">
-                        <button class="home__btn button">contact us</button>
-                        <button class="home__btn button-border">Resume</button> 
+        <div class="main-wrapper">
+            <header class="header-lite">
+                <div class="header-lite__menu">
+                    <button class="header-lite__menu-btn">
+                        <i class='bx bx-menu-alt-left' ></i>
+                    </button>
+                </div>
+                <div class="header-lite__nav">
+                    <ul class="header-lite__list" data-links-list>
+                        <li class="header-lite__item">
+                            <a class="header-lite__link active" data-link="1" href="">
+                                <i class='bx bxs-home'></i>
+                            </a>
+                        </li>
+                        <li class="header-lite__item">
+                            <a class="header-lite__link" data-link="2" href="">
+                                <i class='bx bx-book' ></i>
+                            </a>
+                        </li>
+                        <li class="header-lite__item">
+                            <a class="header-lite__link" data-link="3" href="">
+                                <i class='bx bxs-contact' ></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-lite__theme">
+                    <button class="header-lite__theme-btn" data-theme>
+                        <span class="header-lite__theme-item">
+                            <i class='bx bx-sun light' ></i>
+                            <i class='bx bx-moon dark' ></i>
+                        </span>
+                    </button>
+                </div>
+            </header>
+            <main class="main" data-blocks-list>
+                <div class="main__burger-menu">
+                    <button class="main__burger-btn" data-popup-link="1">
+                        <i class='bx bx-menu-alt-left' ></i>
+                    </button>
+                </div>
+                <section class="home block active" data-block="1">
+                    <div class="home__content">
+                        <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
+                        <p class="home__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Illum rem magni dolore qui harum tempora, quo sequi repellat enim debitis 
+                            aperiam ab excepturi quisquam itaque nisi, ad totam praesentium earum!</p>
+                        <div class="home__buttons">
+                            <button class="home__btn button">contact us</button>
+                            <button class="home__btn button-border">Resume</button> 
+                        </div>
                     </div>
-                </div>
-                <div class="home__media">
-                    <img src="./img/image.png" alt="image" />
-                </div>
-            </section>
-            <section class="about block" data-block="2">
-                <div class="about__media">
-                    <img src="./img/image.png" alt="image" />
-                </div>
-                <div class="about__content">
-                    <h2 class="about__title title">Про мене</h2>
-                    <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, 
-                        animi incidunt consectetur consequatur necessitatibus fuga reiciendis dolorum magnam 
-                        laborum earum quod cupiditate recusandae nemo, aliquam, deserunt odit omnis sit porro?</p>
-                </div>
-            </section>
-            <section class="contact block" data-block="3">  
-                <div class="contact__content">
-                    <h2 class="contact__title title">Contact</h2>
-                    <form class="contact__form">
-                        <div class="contact__row">
-                            <label class="contact__label" for="name">Name</label>
-                            <input class="contact__input input" name="name" id="name" type="text" placeholder="Name"/>
-                        </div>
-                        <div class="contact__row">
-                            <label class="contact__label" for="email">email</label>
-                            <input class="contact__input input" name="email" id="email" type="email" placeholder="Email"/>
-                        </div>
-                        <div class="contact__row">
-                            <label class="contact__label" for="text">Text</label>
-                            <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="5" placeholder="text"></textarea>
-                        </div> 
-                        <button class="contact__submit button">Submit</button>
-                    </form>
-                </div>
-            </section>
-		</main>
+                    <div class="home__media">
+                        <img src="./img/image.png" alt="image" />
+                    </div>
+                </section>
+                <section class="about block" data-block="2">
+                    <div class="about__media">
+                        <img src="./img/image.png" alt="image" />
+                    </div>
+                    <div class="about__content">
+                        <h2 class="about__title title">Про мене</h2>
+                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, 
+                            animi incidunt consectetur consequatur necessitatibus fuga reiciendis dolorum magnam 
+                            laborum earum quod cupiditate recusandae nemo, aliquam, deserunt odit omnis sit porro?</p>
+                    </div>
+                </section>
+                <section class="contact block" data-block="3">  
+                    <div class="contact__content">
+                        <h2 class="contact__title title">Contact</h2>
+                        <form class="contact__form">
+                            <div class="contact__row">
+                                <label class="contact__label" for="name">Name</label>
+                                <input class="contact__input input" name="name" id="name" type="text" placeholder="Name"/>
+                            </div>
+                            <div class="contact__row">
+                                <label class="contact__label" for="email">email</label>
+                                <input class="contact__input input" name="email" id="email" type="email" placeholder="Email"/>
+                            </div>
+                            <div class="contact__row">
+                                <label class="contact__label" for="text">Text</label>
+                                <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="5" placeholder="text"></textarea>
+                            </div> 
+                            <button class="contact__submit button">Submit</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+
 		<aside class="aside" data-popup="1">
     <button class="aside__close" data-popup-exit="1"><i class='bx bx-x'></i></button>
     <div class="aside__ava">
@@ -222,7 +225,7 @@
         <div class="shadow" data-popup-shadow="1"></div>
 	</div>
 
-	<script src="js/app.min.js?_v=20240422100514"></script>
+	<script src="js/app.min.js?_v=20240422114443"></script>
 </body>
 
 </html>

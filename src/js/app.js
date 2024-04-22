@@ -215,14 +215,16 @@ function getCurrentLinkIndex(list) {
     return currentLinkIndex
 }
 
-const theme = document.querySelector("[data-theme]")
+const theme = document.querySelectorAll("[data-theme]")
 const body = document.body
 
-if(theme) {
-    theme.addEventListener("click", e => {
-        e.preventDefault()
-
-        e.currentTarget.classList.toggle("active")
-        body.classList.toggle("dark")
+if(theme.length) {
+    theme.forEach(element => {
+        element.addEventListener("click", e => {
+            e.preventDefault()
+            
+            e.currentTarget.classList.toggle("active")
+            body.classList.toggle("dark")
+        })
     })
 }
