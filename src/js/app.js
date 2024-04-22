@@ -116,19 +116,21 @@ import "./modules/popup.js";
 //   }
 // });
 
-const linksList = document.querySelector("[data-links-list]")
-const blocksList = document.querySelector("[data-blocks-list]")
+const linksList = document.querySelectorAll("[data-links-list]")
+const blocksList = document.querySelectorAll("[data-blocks-list]")
 const lengthPages = 3
 
-if(linksList) {
-    linksList.addEventListener("click", e => {
-        if(e.target.closest("[data-link]")) {
-            e.preventDefault()
-            const currentLink = e.target.closest("[data-link]")
-
-            openLink(linksList, currentLink.dataset.link)
-            openBlock(blocksList, currentLink.dataset.link)
-        }
+if(linksList.length) {
+    linksList.forEach(element => {
+        element.addEventListener("click", e => {
+            if(e.target.closest("[data-link]")) {
+                e.preventDefault()
+                const currentLink = e.target.closest("[data-link]")
+                
+                openLink(element, currentLink.dataset.link)
+                openBlock(blocksList, currentLink.dataset.link)
+            }
+        })
     })
 }
 
@@ -141,17 +143,19 @@ function handleWheel(event) {
     const delta = Math.sign(event.deltaY)
     
     if(now - lastScrollTime > scrollDelay) {
-        let currentLinkIndex = getCurrentLinkIndex(linksList)
-
-        if (delta > 0) {
-            const newLinkIndex = parseInt(currentLinkIndex) + 1 > parseInt(lengthPages) ? currentLinkIndex : ++currentLinkIndex
-            openLink(linksList, newLinkIndex)
-            openBlock(blocksList, newLinkIndex)
-        } else {
-            const newLinkIndex = parseInt(currentLinkIndex) - 1 < 1 ? currentLinkIndex : --currentLinkIndex
-            openLink(linksList, newLinkIndex)
-            openBlock(blocksList, newLinkIndex)
-        }
+        linksList.forEach(element => {
+            let currentLinkIndex = getCurrentLinkIndex(element)
+            
+            if (delta > 0) {
+                const newLinkIndex = parseInt(currentLinkIndex) + 1 > parseInt(lengthPages) ? currentLinkIndex : ++currentLinkIndex
+                openLink(element, newLinkIndex)
+                openBlock(blocksList, newLinkIndex)
+            } else {
+                const newLinkIndex = parseInt(currentLinkIndex) - 1 < 1 ? currentLinkIndex : --currentLinkIndex
+                openLink(element, newLinkIndex)
+                openBlock(blocksList, newLinkIndex)
+            }
+        })
     }
 
     lastScrollTime = now
@@ -184,17 +188,19 @@ function openLink(list, index) {
 }
 
 function openBlock(list, index) {
-    if(!list) return
+    if(!list.length) return
 
-    const blocks = list.querySelectorAll("[data-block]")
-    if(!blocks.length) return
-
-    closeAll(list, "[data-block]")
-
-    blocks.forEach(element => {
-        if(parseInt(element.dataset.block) == parseInt(index)) {
-            element.classList.add("active")
-        }
+    list.forEach(element => {
+        const blocks = element.querySelectorAll("[data-block]")
+        if(!blocks.length) return
+        
+        closeAll(element, "[data-block]")
+        
+        blocks.forEach(element => {
+            if(parseInt(element.dataset.block) == parseInt(index)) {
+                element.classList.add("active")
+            }
+        })
     })
 }
 
