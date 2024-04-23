@@ -115,10 +115,9 @@ import "./modules/popup.js";
 // 		effects: "fade translateY(20%)"
 //   }
 // });
-
 const linksList = document.querySelectorAll("[data-links-list]")
 const blocksList = document.querySelectorAll("[data-blocks-list]")
-const lengthPages = 3
+const lengthPages = 4
 
 if(linksList.length) {
     linksList.forEach(element => {
@@ -127,7 +126,7 @@ if(linksList.length) {
                 e.preventDefault()
                 const currentLink = e.target.closest("[data-link]")
                 
-                openLink(element, currentLink.dataset.link)
+                openLinks(currentLink.dataset.link)
                 openBlock(blocksList, currentLink.dataset.link)
             }
         })
@@ -136,35 +135,91 @@ if(linksList.length) {
 
 document.addEventListener("wheel", handleWheel);
 let lastScrollTime = 0
+let lastTouchTime = 0
 const scrollDelay = 200
+let startTouchY
+
+document.addEventListener("touchstart", e => {
+    startTouchY = e.touches[0].clientY
+}, false)
+
+document.addEventListener("touchmove", e => {
+    e.preventDefault();
+}, false)
+
+document.addEventListener("touchend", e => {
+    let now = new Date().getTime()
+
+    let endY = e.changedTouches[0].clientY;
+    let deltaY = startTouchY - endY;
+
+    if((now - lastTouchTime) > scrollDelay) {
+        let currentLinkIndex = getCurrentLinkIndex()
+
+        if (deltaY > 0) {
+            const newLinkIndex = parseInt(currentLinkIndex) + 1 > parseInt(lengthPages) ? currentLinkIndex : ++currentLinkIndex
+            openLinks(newLinkIndex)
+            openBlock(blocksList, newLinkIndex)
+        } else {
+            let newLinkIndex = currentLinkIndex;
+
+            if(parseInt(currentLinkIndex) - 1 < 1) {
+                newLinkIndex = currentLinkIndex
+            } else {
+                newLinkIndex = parseInt(currentLinkIndex) - 1
+            }
+
+            openLinks(newLinkIndex)
+            openBlock(blocksList, newLinkIndex)
+        }
+    }
+
+    lastTouchTime = now
+})
 
 function handleWheel(event) {
     let now = new Date().getTime()
     const delta = Math.sign(event.deltaY)
     
-    if(now - lastScrollTime > scrollDelay) {
-        linksList.forEach(element => {
-            let currentLinkIndex = getCurrentLinkIndex(element)
-            
-            if (delta > 0) {
-                const newLinkIndex = parseInt(currentLinkIndex) + 1 > parseInt(lengthPages) ? currentLinkIndex : ++currentLinkIndex
-                openLink(element, newLinkIndex)
-                openBlock(blocksList, newLinkIndex)
+    if((now - lastScrollTime) > scrollDelay) {
+        let currentLinkIndex = getCurrentLinkIndex()
+        
+        if (delta > 0) {
+            const newLinkIndex = parseInt(currentLinkIndex) + 1 > parseInt(lengthPages) ? currentLinkIndex : ++currentLinkIndex
+            openLinks(newLinkIndex)
+            openBlock(blocksList, newLinkIndex)
+        } else {
+            let newLinkIndex = currentLinkIndex;
+
+            if(parseInt(currentLinkIndex) - 1 < 1) {
+                newLinkIndex = currentLinkIndex
             } else {
-                const newLinkIndex = parseInt(currentLinkIndex) - 1 < 1 ? currentLinkIndex : --currentLinkIndex
-                openLink(element, newLinkIndex)
-                openBlock(blocksList, newLinkIndex)
+                newLinkIndex = parseInt(currentLinkIndex) - 1
             }
-        })
+
+            openLinks(newLinkIndex)
+            openBlock(blocksList, newLinkIndex)
+        }
     }
 
     lastScrollTime = now
 }
 
-function closeAll(list, dataAttr) {
-    if(!list) return
+function openLinks(index) {
+    const links = document.querySelectorAll("[data-link]")
+    if(!links.length) return
 
-    const links = list.querySelectorAll(dataAttr.toString())
+    closeAll("[data-link]")
+
+    links.forEach(element => {
+        if(parseInt(element.dataset.link) == parseInt(index)) {
+            element.classList.add("active")
+        }
+    })
+}
+
+function closeAll(dataAttr) {
+    const links = document.querySelectorAll(dataAttr.toString())
     if(!links.length) return
 
     links.forEach(element => {
@@ -178,7 +233,7 @@ function openLink(list, index) {
     const links = list.querySelectorAll("[data-link]")
     if(!links.length) return
 
-    closeAll(list, "[data-link]")
+    closeAll("[data-link]")
 
     links.forEach(element => {
         if(parseInt(element.dataset.link) == parseInt(index)) {
@@ -194,7 +249,7 @@ function openBlock(list, index) {
         const blocks = element.querySelectorAll("[data-block]")
         if(!blocks.length) return
         
-        closeAll(element, "[data-block]")
+        closeAll("[data-block]")
         
         blocks.forEach(element => {
             if(parseInt(element.dataset.block) == parseInt(index)) {
@@ -204,18 +259,13 @@ function openBlock(list, index) {
     })
 }
 
-function getCurrentLinkIndex(list) {
-    if(!list) return
-
+function getCurrentLinkIndex() {
     let currentLinkIndex = undefined
 
-    const links = list.querySelectorAll("[data-link]")
-    if(!links.length) return
+    for(let i = 0; i < linksList.length; i++) {
+        const link = linksList[i].querySelector("[data-link].active")
 
-    for(let i = 0; i < links.length; i++) {
-        if(links[i].closest("[data-link].active")) {
-            currentLinkIndex = links[i].dataset.link
-        }
+        if(link) currentLinkIndex = link.dataset.link
     }
 
     return currentLinkIndex

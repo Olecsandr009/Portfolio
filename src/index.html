@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include( 'html/head.html', {
-"title": "Мій сайт"
+"title": "Моє резюме"
 })
 
 <body>
@@ -28,6 +28,11 @@
                         </li>
                         <li class="header-lite__item">
                             <a class="header-lite__link" data-link="3" href="">
+                                <i class='bx bx-spreadsheet'></i>
+                            </a>
+                        </li>
+                        <li class="header-lite__item">
+                            <a class="header-lite__link" data-link="4" href="">
                                 <i class='bx bxs-contact' ></i>
                             </a>
                         </li>
@@ -51,46 +56,50 @@
                 <section class="home block active" data-block="1">
                     <div class="home__content">
                         <h1 class="home__title title">Створюю якісну продукцію, яка радує око користувача</h1>
-                        <p class="home__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                            Illum rem magni dolore qui harum tempora, quo sequi repellat enim debitis 
-                            aperiam ab excepturi quisquam itaque nisi, ad totam praesentium earum!</p>
-                        <div class="home__buttons">
-                            <button class="home__btn button">contact us</button>
-                            <button class="home__btn button-border">Resume</button> 
+                        <p class="home__text">Писати якісний код - моє хобі, особливо коли він перетворюється на красивий, адаптивний 
+                            веб-сайт з яскравими анімаціями, який просто захоплює своєю красою та функціональністю.
+                        </p>
+                        <div class="home__buttons" data-links-list>
+                            <button class="home__btn button" data-link="4">Зв'язатися зі мною</button>
+                            <button class="home__btn button-border" data-link="2">Резюме</button> 
+                            <div data-link="1"></div>
                         </div>
                     </div>
                     <div class="home__media">
-                        <img src="./img/image.png" alt="image" />
+                        <img src="@img/home.jpg" alt="image" />
                     </div>
                 </section>
                 <section class="about block" data-block="2">
                     <div class="about__media">
-                        <img src="./img/image.png" alt="image" />
+                        <img src="@img/about.jpg" alt="image" />
                     </div>
                     <div class="about__content">
                         <h2 class="about__title title">Про мене</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, 
-                            animi incidunt consectetur consequatur necessitatibus fuga reiciendis dolorum magnam 
-                            laborum earum quod cupiditate recusandae nemo, aliquam, deserunt odit omnis sit porro?</p>
+                        <p class="about__text">Маю трирічний досвід у вивченні та розробці веб-сайтів, що стало 
+                            моїм великим захопленням. Мою увагу найбільше привертає розробка з використанням 
+                            бібліотеки React, проте я також активно використовую й інші технології. Постійно 
+                            прагну поглиблювати свої знання, вивчаючи нові технології та методики. Моє головне 
+                            прагнення - досягнення високої якості в кожному аспекті моєї роботи.</p>
                     </div>
                 </section>
-                <section class="contact block" data-block="3">  
+                @@include( 'html/projects.html', {} )
+                <section class="contact block" data-block="4">  
                     <div class="contact__content">
-                        <h2 class="contact__title title">Contact</h2>
+                        <h2 class="contact__title title">Зв'язатися зі мною</h2>
                         <form class="contact__form">
                             <div class="contact__row">
-                                <label class="contact__label" for="name">Name</label>
-                                <input class="contact__input input" name="name" id="name" type="text" placeholder="Name"/>
+                                <label class="contact__label" for="name">Ім'я:</label>
+                                <input class="contact__input input" name="name" id="name" type="text"/>
                             </div>
                             <div class="contact__row">
-                                <label class="contact__label" for="email">email</label>
-                                <input class="contact__input input" name="email" id="email" type="email" placeholder="Email"/>
+                                <label class="contact__label" for="email">Пошта:</label>
+                                <input class="contact__input input" name="email" id="email" type="email"/>
                             </div>
                             <div class="contact__row">
-                                <label class="contact__label" for="text">Text</label>
-                                <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="5" placeholder="text"></textarea>
+                                <label class="contact__label" for="text">Повідомлення:</label>
+                                <textarea class="contact__textarea textarea" name="text" id="text" cols="30" rows="5"></textarea>
                             </div> 
-                            <button class="contact__submit button">Submit</button>
+                            <button class="contact__submit button">Відправити</button>
                         </form>
                     </div>
                 </section>
